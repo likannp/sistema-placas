@@ -1,6 +1,7 @@
 class PlacasCarroController < ApplicationController
 
   def index
+    @Carros = PlacaCarro.new
   end
 
   def edit

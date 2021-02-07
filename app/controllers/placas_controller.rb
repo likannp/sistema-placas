@@ -9,6 +9,9 @@ class PlacasController < ApplicationController
   end
 
   def update
+    @placa = Placa.find(params[:id])
+    @placa.update(placa_params)
+    redirect_to placas_path
   end
 
   def new

@@ -13,6 +13,8 @@
         <th scope="col">Ano</th>
         <th scope="col"> <%= link_to 'Deletar registro', placa_path(registro.placa), class: 'btn btn-dark float-right', method: :delete %> </th>
       </tr>
+      <th scope="col"> <%= link_to 'Editar registro', edit_placa_path(registro.placa), class: 'btn btn-success', method: :get %> </th>
+      </tr>
     </thead>
     <tbody>
       <tr>

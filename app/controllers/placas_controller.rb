@@ -5,6 +5,7 @@ class PlacasController < ApplicationController
   end
 
   def edit
+    @placa = Placa.find(params[:id])
   end
 
   def update

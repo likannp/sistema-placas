@@ -3,4 +3,27 @@
 
 </br></br>
 
+<% @registros.each do |registro| %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Placa</th>
+        <th scope="col">Proprietario</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Ano</th>
+        <th scope="col"> <%= link_to 'Deletar registro', placa_path(registro.placa), class: 'btn btn-dark float-right', method: :delete %> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><%= registro.placa %></th>
+        <td><%= registro.proprietario %></</td>
+        <td><%= registro.modelo %></</td>
+        <td><%= registro.ano %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+
+
 <%= link_to 'Adicionar novos registros', new_placa_path, class: 'btn btn-success', method: :get %>

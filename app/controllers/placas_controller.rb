@@ -1,7 +1,7 @@
 class PlacasController < ApplicationController
 
   def index
-    @registros = Placa.new
+    @registros = Placa.all
   end
 
   def edit
@@ -21,6 +21,8 @@ class PlacasController < ApplicationController
   end
 
   def destroy
+    Placa.delete(params[:id])
+    redirect_to placas_path
   end
 
   private

@@ -7,6 +7,17 @@ Cadastro de Placas de Carros
 
 ### Configuration
 
+  0. Definir as variaveis de ambiente:
+  
+```bash
+    export DATABASE_USERNAME=<SEU_USUARIO>
+    export DATABASE_PASSWORD=<SUA_SENHA>
+    export DATABASE_HOST=<SEU_HOST>
+    export DATABASE_PORT=<SUA_PORT>
+
+```
+   
+    
   1. Yarn install
   2. bundle install
   3. rails db:migrate

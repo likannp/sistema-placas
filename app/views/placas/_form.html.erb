@@ -11,7 +11,7 @@
 
 
   <div class="form-group col-sm-10">
-    <%= form.label :placa, 'Placa:', style:'font-size: 20px'%>
+    <%= form.label :placa, 'Placa: (Ex: aaa0000)', style:'font-size: 20px'%>
     <%= form.text_field :placa, class:'form-control'%>
 
     <% if  @placa.errors.include?(:placa) %>
@@ -29,8 +29,14 @@
     <%= form.text_field :modelo, class:'form-control'%> 
   </div>
   <div class="form-group col-sm-10">
-    <%= form.label :ano, 'Ano:', style:'font-size: 20px'%>
+    <%= form.label :ano, 'Ano: (Ex: 2010)', style:'font-size: 20px'%>
     <%= form.text_field :ano, class:'form-control'%>
+
+        <% if  @placa.errors.include?(:ano) %>
+      <div>
+        <%= @placa.errors.messages[:ano].first %>
+      </div>
+    <% end %>
   </div>
 
 <%= form.submit 'Criar novo registro', class:'btn btn-success buttons-success'%> 

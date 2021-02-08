@@ -1,19 +1,22 @@
 
-<h1> Bem vindo!!! </h1>
+<h1 style='margin: 15px'> Bem vindo!!! </h1>
+<h2 style='margin: 15px'> Sistema para Placas </h2>
 
 </br></br>
 
+<%= link_to 'Adicionar novos registros', new_placa_path, class: 'btn btn-success float-right',style:'margin: 15px', method: :get %>
+
 <% @registros.each do |registro| %>
   <table class="table table-striped">
+    <div class="table-responsive">
     <thead>
       <tr>
         <th scope="col">Placa</th>
         <th scope="col">Proprietario</th>
         <th scope="col">Modelo</th>
         <th scope="col">Ano</th>
-        <th scope="col"> <%= link_to 'Deletar registro', placa_path(registro.placa), class: 'btn btn-dark float-right', method: :delete %> </th>
-      </tr>
-      <th scope="col"> <%= link_to 'Editar registro', edit_placa_path(registro.placa), class: 'btn btn-success', method: :get %> </th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -22,10 +25,10 @@
         <td><%= registro.proprietario %></</td>
         <td><%= registro.modelo %></</td>
         <td><%= registro.ano %></td>
+        <td> <%= link_to 'Deletar registro', placa_path(registro.placa), class: 'btn btn-dark float-right', method: :delete %> </td>
+        <td ><%= link_to 'Editar registro', edit_placa_path(registro.placa), class: 'btn btn-success', method: :get %> </td>
       </tr>
     </tbody>
+    </div>
   </table>
 <% end %>
-
-
-<%= link_to 'Adicionar novos registros', new_placa_path, class: 'btn btn-success', method: :get %>

@@ -1,3 +1,4 @@
+<div class="container">
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
@@ -6,15 +7,34 @@
 
 <%= form_with model: @placa, local: true do |form| %>
 
-<%= link_to 'Voltar para tela inicial', root_path, class:'btn btn-primary'%>
-  <%= form.label 'Placa:', style:'font-size: 20px'%>
-    <%= form.text_field :placa, class:'form-control', style:'margin: 10px'%>
-  <%= form.label 'Proprietário:', style:'font-size: 20px'%>
-    <%= form.text_field :proprietario, class:'form-control', style:'margin: 10px'%>
-  <%= form.label 'Modelo:', style:'font-size: 20px'%>
-    <%= form.text_field :modelo, class:'form-control', style:'margin: 10px'%>
-  <%= form.label 'Ano:', style:'font-size: 20px'%>
-    <%= form.text_field :ano, class:'form-control', style:'margin: 10px'%>
+<%= link_to 'Voltar para tela inicial', root_path, class:'btn btn-primary buttons-success' %>
 
-  <%= form.submit 'Criar novo registro', class:'btn btn-primary'%> 
+
+  <div class="mb-3">
+    <%= form.label 'Placa:', style:'font-size: 20px'%>
+     <div class="col-sm-10">
+    <%= form.text_field :placa, class:'form-control'%>
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= form.label 'Proprietário:', style:'font-size: 20px'%>
+     <div class="col-sm-10">
+    <%= form.text_field :proprietario, class:'form-control'%>
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= form.label 'Modelo:', style:'font-size: 20px'%>
+     <div class="col-sm-10">
+    <%= form.text_field :modelo, class:'form-control'%> 
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= form.label 'Ano:', style:'font-size: 20px'%>
+     <div class="col-sm-10">
+    <%= form.text_field :ano, class:'form-control'%>
+    </div>
+  </div>
+
+<%= form.submit 'Criar novo registro', class:'btn btn-success buttons-success'%> 
 <%end%>
+</div>

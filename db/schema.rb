@@ -12,17 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_02_07_151917) do
 
-  create_table "placas_carro", primary_key: "placa", id: :string, force: :cascade do |t|
-    t.string "proprietario"
-    t.string "modelo"
-    t.integer "ano"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  create_table "placas_carros", force: :cascade do |t|
-    t.string "placa", null: false
-    t.string "primary_key", null: false
+  create_table "placas_carro", primary_key: "placa", id: :string, force: :cascade do |t|
     t.string "proprietario"
     t.string "modelo"
     t.integer "ano"

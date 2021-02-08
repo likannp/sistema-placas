@@ -21,9 +21,9 @@ class PlacasController < ApplicationController
   def create
     @placa = Placa.new(placa_params)
     if @placa.save
-     redirect_to placas_path
-    else 
-      flash.now[:alert] = "Todos campos devem ser preenchidos"
+      redirect_to placas_path
+    else
+      flash.now[:alert] = "Todos campos devem ser preenchidos corretamente"
       render(:new)
     end
   end

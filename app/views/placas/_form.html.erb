@@ -10,29 +10,23 @@
 <%= link_to 'Voltar para tela inicial', root_path, class:'btn btn-primary buttons-success' %>
 
 
-  <div class="mb-3">
-    <%= form.label 'Placa:', style:'font-size: 20px'%>
-     <div class="col-sm-10">
+  <div class="form-group col-sm-10">
+    <%= form.label :placa, 'Placa:', style:'font-size: 20px'%>
     <%= form.text_field :placa, class:'form-control'%>
-    </div>
+
+
   </div>
-  <div class="mb-3">
-    <%= form.label 'Proprietário:', style:'font-size: 20px'%>
-     <div class="col-sm-10">
+  <div class="form-group col-sm-10">
+    <%= form.label :proprietario, 'Proprietário:', style:'font-size: 20px'%>
     <%= form.text_field :proprietario, class:'form-control'%>
-    </div>
   </div>
-  <div class="mb-3">
-    <%= form.label 'Modelo:', style:'font-size: 20px'%>
-     <div class="col-sm-10">
+  <div class="form-group col-sm-10">
+    <%= form.label :modelo, 'Modelo:', style:'font-size: 20px'%>
     <%= form.text_field :modelo, class:'form-control'%> 
-    </div>
   </div>
-  <div class="mb-3">
-    <%= form.label 'Ano:', style:'font-size: 20px'%>
-     <div class="col-sm-10">
+  <div class="form-group col-sm-10">
+    <%= form.label :ano, 'Ano:', style:'font-size: 20px'%>
     <%= form.text_field :ano, class:'form-control'%>
-    </div>
   </div>
 
 <%= form.submit 'Criar novo registro', class:'btn btn-success buttons-success'%> 

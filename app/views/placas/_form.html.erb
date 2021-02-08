@@ -1,3 +1,9 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
 <%= form_with model: @placa, local: true do |form| %>
 
 <%= link_to 'Voltar para tela inicial', root_path, class:'btn btn-primary'%>

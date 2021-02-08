@@ -15,7 +15,6 @@
         <th scope="col">Modelo</th>
         <th scope="col">Ano</th>
         <th scope="col"></th>
-        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -25,8 +24,8 @@
           <td><%= registro.proprietario %></</td>
           <td><%= registro.modelo %></</td>
           <td><%= registro.ano %></td>
-          <td> <%= link_to 'Deletar registro', placa_path(registro.placa), class: 'btn btn-dark float-right', method: :delete %> </td>
-          <td ><%= link_to 'Editar registro', edit_placa_path(registro.placa), class: 'btn btn-success', method: :get %> </td>
+          <td><%= link_to 'Editar registro', edit_placa_path(registro.placa), class: 'btn btn-success', method: :get %>
+          <%= link_to 'Deletar registro', placa_path(registro.placa), class: 'btn btn-dark', method: :delete %> </td>
         </tr>
       <% end %>
     </tbody>

@@ -10,8 +10,12 @@ class PlacasController < ApplicationController
 
   def update
     @placa = Placa.find(params[:id])
-    @placa.update(placa_params)
-    redirect_to placas_path
+    if @placa.update(placa_params)
+      redirect_to placas_path
+    else
+      flash.now[:alert] = "Todos campos devem ser preenchidos corretamente"
+      render(:edit)
+    end
   end
 
   def new

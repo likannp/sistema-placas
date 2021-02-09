@@ -1,44 +1,43 @@
 <div class="container">
-<% flash.each do |type, msg| %>
-  <div class="alert alert-danger" role="alert">
-    <%= msg %>
-  </div>
-<% end %>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-danger" role="alert">
+      <%= msg %>
+    </div>
+  <% end %>
 
-<%= form_with model: @placa, local: true do |form| %>
+  <%= form_with model: @placa, local: true do |form| %>
 
-<%= link_to 'Voltar para tela inicial', root_path, class:'btn btn-primary buttons-success' %>
+  <%= link_to 'Voltar para tela inicial', root_path, class:'btn btn-primary buttons-success' %>
 
+    <div class="form-group col-sm-10">
+      <%= form.label :placa, 'Placa: (Ex: aaa0000)', style:'font-size: 20px'%>
+      <%= form.text_field :placa, class: "form-control #{ 'is-invalid' if @placa.errors.include?(:placa)}" %>
 
-  <div class="form-group col-sm-10">
-    <%= form.label :placa, 'Placa: (Ex: aaa0000)', style:'font-size: 20px'%>
-    <%= form.text_field :placa, class: "form-control #{ 'is-invalid' if @placa.errors.include?(:placa)}" %>
+      <% if @placa.errors.include?(:placa) %>
+        <div class="invalid-feedback" style="display:block">
+          <%= @placa.errors.messages[:placa].first %>
+        </div>
+      <% end %>
+    </div>
+    <div class="form-group col-sm-10">
+      <%= form.label :proprietario, 'Proprietário:', style:'font-size: 20px'%>
+      <%= form.text_field :proprietario, class:'form-control'%>
+    </div>
+    <div class="form-group col-sm-10">
+      <%= form.label :modelo, 'Modelo:', style:'font-size: 20px'%>
+      <%= form.text_field :modelo, class:'form-control'%> 
+    </div>
+    <div class="form-group has-validation col-sm-10">
+      <%= form.label :ano, 'Ano: (Ex: 2010)', style:'font-size: 20px'%>
+      <%= form.text_field :ano, class:"form-control #{ 'is-invalid' if @placa.errors.include?(:ano)}"%>
 
-    <% if @placa.errors.include?(:placa) %>
-      <div class="invalid-feedback" style="display:block">
-        <%= @placa.errors.messages[:placa].first %>
-      </div>
-    <% end %>
-  </div>
-  <div class="form-group col-sm-10">
-    <%= form.label :proprietario, 'Proprietário:', style:'font-size: 20px'%>
-    <%= form.text_field :proprietario, class:'form-control'%>
-  </div>
-  <div class="form-group col-sm-10">
-    <%= form.label :modelo, 'Modelo:', style:'font-size: 20px'%>
-    <%= form.text_field :modelo, class:'form-control'%> 
-  </div>
-  <div class="form-group has-validation col-sm-10">
-    <%= form.label :ano, 'Ano: (Ex: 2010)', style:'font-size: 20px'%>
-    <%= form.text_field :ano, class:"form-control #{ 'is-invalid' if @placa.errors.include?(:ano)}"%>
+          <% if  @placa.errors.include?(:ano) %>
+        <div class="invalid-feedback" style="display:block">
+          <%= @placa.errors.messages[:ano].first %>
+        </div>
+      <% end %>
+    </div>
 
-        <% if  @placa.errors.include?(:ano) %>
-      <div class="invalid-feedback" style="display:block">
-        <%= @placa.errors.messages[:ano].first %>
-      </div>
-    <% end %>
-  </div>
-
-<%= form.submit 'Criar novo registro', class:'btn btn-success buttons-success'%> 
-<%end%>
+  <%= form.submit 'Criar novo registro', class:'btn btn-success buttons-success'%> 
+  <%end%>
 </div>
